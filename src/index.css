@@ -64,9 +64,25 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+.background {
   background-image: url(https://impsauth.gws.seic.com/advmfaservices/gws/i14amfade/images/adv1ade_background.jpg);
   background-size: cover;
-  height: 100%;
+}
+
+.sei-1.background {
+  background-image: url(https://images.unsplash.com/photo-1618549653618-8a287ca52dbb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+}
+
+.sei-2.background {
+  background-image: url(https://images.unsplash.com/photo-1607269910784-aafe40882991?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80);
+}
+
+.sei-2 header,
+.sei-2 footer {
+  background: #7b0505;
 }
 
 code {

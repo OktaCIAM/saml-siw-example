@@ -38,11 +38,40 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import OktaSignInWidget from './OktaSignInWidget';
 import { useOktaAuth } from '@okta/okta-react';
+import { oktaSignInConfig } from './config';
+import { useHistory } from 'react-router';
 
-const Login = ({ config }) => {
+const Login = ({customer}) => {
   const { oktaAuth, authState } = useOktaAuth();
   const [override, setOverride] = useState(false);
+  let config = oktaSignInConfig;
 
+  if (customer === 'sei-1') {
+    config = {
+      ...oktaSignInConfig,
+      logo: 'https://www.pinclipart.com/picdir/big/347-3475475_generic-company-logo-clipart-best-generic-company-logo.png',
+      helpSupportNumber: '(123) SEI-1800',
+      helpLinks: {
+        help: 'https://sei-1.ciam.app/help'
+      }
+    };
+
+    config.i18n.en['primaryauth.title'] = 'Welcome SEI-1 - SEI Advisor Center';
+  }
+
+  if (customer === 'sei-2') {
+    config = {
+      ...oktaSignInConfig,
+      logo: 'https://www.pngkit.com/png/full/141-1416995_generic-logo-transparent-background.png',
+      helpSupportNumber: '(123) SEI-1800',
+      helpLinks: {
+        help: 'https://sei-1.ciam.app/help'
+      }
+    };
+  
+    config.i18n.en['primaryauth.title'] = 'Welcome SEI-2 - SEI Advisor Center';
+  }
+  
   const onSuccess = (tokens) => {
     oktaAuth.handleLoginRedirect(tokens);
   };
@@ -70,7 +99,7 @@ const Login = ({ config }) => {
           onSuccess={onSuccess}
           onError={onError}/>
         <div className="login__terms">
-        <span>
+          <span>
     By logging in to this site you agree to the <br/>
     <span className="login__terms-link">Terms and Conditions of Use</span> and <span className="login__terms-link">Privacy Policy.</span>
           </span>
