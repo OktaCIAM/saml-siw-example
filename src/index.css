@@ -134,8 +134,8 @@ header {
 }
 
 footer {
-  position: absolute;
-  bottom: -13px;
+  position: relative;
+  bottom: 0;
   background: #173B6B;
   color: white;
   text-align: center;
@@ -163,6 +163,11 @@ footer h3 {
   margin-left: 10px;
   font-size: 20px;
 }
+
+#override .login__terms {
+  text-align: left;
+}
+
 
 /** Sign in Widget Override **/
 #override #okta-sign-in {
@@ -195,7 +200,6 @@ footer h3 {
 #override #okta-sign-in .okta-form-title {
   text-align: left;
   font-size: 24px;
-  width: 450px;
   color: #585a5b;
 }
 
@@ -267,10 +271,6 @@ footer h3 {
   text-align: left;
   padding-left: 12px;
   font-weight: 500;
-}
-
-#override .login__terms {
-  text-align: left;
 }
 
 #override #okta-sign-in .options-wrap {

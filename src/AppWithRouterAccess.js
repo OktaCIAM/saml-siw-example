@@ -22,14 +22,19 @@ const AppWithRouterAccess = () => {
     history.replace(toRelativeUrl(originalUri, window.location.origin));
   };
 
-  let subdomain = null;
+  let customer = null;
+  if (window.location.search) {
+    const urlParams = new URLSearchParams(window.location.search);
+    customer = urlParams.get('client');
+  }
+  
   const currentUrl = new URL(window.location.href);
   if (currentUrl.host.indexOf('.') !== -1) {
-    subdomain = currentUrl.host.split('.')[0];
+    customer = currentUrl.host.split('.')[0];
   }
 
   return (
-    <div className={`${subdomain} background`}>
+    <div className={`${customer ? customer : null} background`}>
       <Security
         oktaAuth={oktaAuth}
         onAuthRequired={customAuthHandler}
@@ -45,7 +50,7 @@ const AppWithRouterAccess = () => {
         <Switch>
           <Route path='/' exact={true} component={Home} />
           <SecureRoute path='/protected' component={Protected} />
-          <Route path='/login' render={() => <Login customer={subdomain}/>} />
+          <Route path='/login' render={() => <Login customer={customer}/>} />
           <Route path='/login/callback' component={LoginCallback} />
         </Switch>
         <footer>
