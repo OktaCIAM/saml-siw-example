@@ -278,3 +278,6 @@ footer h3 {
   left: -186px;
 }
 
+#override #okta-sign-in .auth-org-logo {
+  display: none;
+}
