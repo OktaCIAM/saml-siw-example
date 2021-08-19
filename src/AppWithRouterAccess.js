@@ -35,7 +35,11 @@ const AppWithRouterAccess = () => {
   
   const currentUrl = new URL(window.location.href);
   if (currentUrl.host.indexOf('.') !== -1) {
-    client = currentUrl.host.split('.')[0];
+    let subdomain = currentUrl.host.split('.')[0];
+
+    if (subdomain !== 'sei') {
+      client = subdomain;
+    }
   }
 
   return (
