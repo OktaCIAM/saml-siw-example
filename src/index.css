@@ -96,12 +96,17 @@ code {
   background-image: linear-gradient(to right, #fffc 50%, #fff3);
 }
 
+#override .main__container {
+  padding-top: .5em;
+}
+
 .login__terms {
   margin-top: 1.3em;
   line-height: 1.4;
   color: #585a5b;
   font-size: 13px;
   text-align: center;
+  letter-spacing: -0.03em;
 }
 
 .login__terms-link {
