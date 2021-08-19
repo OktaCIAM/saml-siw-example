@@ -11,8 +11,6 @@ const oktaAuthConfig = {
 
 const oktaSignInConfig = {
     baseUrl: 'https://ashwin.okta.com',
-    clientId: '0oabhnnghhz6sIHFK357',
-    redirectUri: window.location.origin + '/login/callback',
     language: 'en',
     i18n: {
       en: {
