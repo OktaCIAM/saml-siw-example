@@ -68,12 +68,12 @@ body {
 }
 
 .background {
-  background-image: url(https://impsauth.gws.seic.com/advmfaservices/gws/i14amfade/images/adv1ade_background.jpg);
+  background-image: url(https://images.unsplash.com/photo-1618549653618-8a287ca52dbb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
   background-size: cover;
 }
 
 .sei-1.background {
-  background-image: url(https://images.unsplash.com/photo-1618549653618-8a287ca52dbb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+  background-image: url(https://impsauth.gws.seic.com/advmfaservices/gws/i14amfade/images/adv1ade_background.jpg);  );
 }
 
 .sei-2.background {

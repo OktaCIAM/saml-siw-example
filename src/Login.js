@@ -6,7 +6,7 @@ import { oktaSignInConfig } from './config';
 
 const Login = ({client, stateToken, fromURI}) => {
   const { oktaAuth, authState } = useOktaAuth();
-  const [override, setOverride] = useState(false);
+  const [override, setOverride] = useState(true);
   let config = oktaSignInConfig;
 
   if (client === 'sei-1') {
