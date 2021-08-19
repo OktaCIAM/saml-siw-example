@@ -72,12 +72,38 @@ body {
   background-size: cover;
 }
 
+/** 
+  Customization per customer: 
+  background
+**/
 .sei-1.background {
   background-image: url(https://impsauth.gws.seic.com/advmfaservices/gws/i14amfade/images/adv1ade_background.jpg);
 }
 
 .sei-2.background {
   background-image: url(https://images.unsplash.com/photo-1607269910784-aafe40882991?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80);
+}
+
+.secure.background {
+  background-image: url(https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2613&q=80);
+}
+
+.secure.background {
+  background-image: url(https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2613&q=80);
+}
+
+.admin.background {
+  background-image: url(https://images.unsplash.com/photo-1519999482648-25049ddd37b1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2452&q=80);
+}
+
+.secure header,
+.secure footer {
+  background: #00435d;
+}
+
+.admin header,
+.admin footer {
+  background: #562400;
 }
 
 .sei-2 header,

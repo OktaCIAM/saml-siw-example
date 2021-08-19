@@ -31,6 +31,26 @@ const AppWithRouterAccess = () => {
     client = urlParams.get('client');
     stateToken = urlParams.get('stateToken');
     fromURI = urlParams.get('fromURI');
+
+    // No client, implies that it's a shared login
+    // we can use the RelayState to determine the customer
+    if (!client && fromURI.includes('RelayState=')) {
+      const param = 'RelayState=';
+      const relayStateIndex = fromURI.indexOf(param);
+      // if invalid uri
+      try {
+        const relayState = decodeURIComponent(fromURI.substring(relayStateIndex + param.length));
+        console.log(`RelayState = ${relayState}`);
+        // Remove stray tail paths
+        // Could use regex here instead
+        const paths = relayState.split('/').filter(x => x);
+        client = paths[paths.length - 1];
+      } catch(err) {
+        console.warn(err);
+      }
+    }
+
+    console.log('~~ Client Set:', client);
   }
   
   const currentUrl = new URL(window.location.href);
@@ -41,6 +61,7 @@ const AppWithRouterAccess = () => {
       client = subdomain;
     }
   }
+
 
   return (
     <div className={`${client ? client : null} background`}>

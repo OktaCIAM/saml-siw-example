@@ -35,6 +35,15 @@ const Login = ({client, stateToken, fromURI}) => {
     config.i18n.en['primaryauth.title'] = 'Welcome SEI-2 - SEI Advisor Center';
   }
 
+  if (client === 'secure') {
+    config.i18n.en['primaryauth.title'] = 'Welcome Secure Client';
+  }
+
+  if (client === 'admin') {
+    config.i18n.en['primaryauth.title'] = 'Welcome Admin';
+  }
+
+
   if (stateToken) {
     // config.stateToken = stateToken;
   }
