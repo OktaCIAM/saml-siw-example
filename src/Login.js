@@ -39,14 +39,13 @@ import { Redirect } from 'react-router-dom';
 import OktaSignInWidget from './OktaSignInWidget';
 import { useOktaAuth } from '@okta/okta-react';
 import { oktaSignInConfig } from './config';
-import { useHistory } from 'react-router';
 
-const Login = ({customer}) => {
+const Login = ({client, stateToken, fromURI}) => {
   const { oktaAuth, authState } = useOktaAuth();
   const [override, setOverride] = useState(false);
   let config = oktaSignInConfig;
 
-  if (customer === 'sei-1') {
+  if (client === 'sei-1') {
     config = {
       ...oktaSignInConfig,
       logo: 'https://www.pinclipart.com/picdir/big/347-3475475_generic-company-logo-clipart-best-generic-company-logo.png',
@@ -59,7 +58,7 @@ const Login = ({customer}) => {
     config.i18n.en['primaryauth.title'] = 'Welcome SEI-1 - SEI Advisor Center';
   }
 
-  if (customer === 'sei-2') {
+  if (client === 'sei-2') {
     config = {
       ...oktaSignInConfig,
       logo: 'https://www.pngkit.com/png/full/141-1416995_generic-logo-transparent-background.png',
@@ -71,9 +70,16 @@ const Login = ({customer}) => {
   
     config.i18n.en['primaryauth.title'] = 'Welcome SEI-2 - SEI Advisor Center';
   }
+
+  if (stateToken) {
+    // config.stateToken = stateToken;
+  }
   
-  const onSuccess = (tokens) => {
-    oktaAuth.handleLoginRedirect(tokens);
+  const onSuccess = (res) => {
+    console.log('login success', res);
+    if (res.status === 'SUCCESS') {
+      res.session.setCookieAndRedirect(fromURI)
+    }
   };
 
   const onError = (err) => {

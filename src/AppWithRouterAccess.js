@@ -23,9 +23,14 @@ const AppWithRouterAccess = () => {
   };
 
   let customer = null;
+  let stateToken = null;
+  let fromURI = null;
+
   if (window.location.search) {
     const urlParams = new URLSearchParams(window.location.search);
     customer = urlParams.get('client');
+    stateToken = urlParams.get('stateToken');
+    fromURI = urlParams.get('fromURI');
   }
   
   const currentUrl = new URL(window.location.href);
@@ -50,7 +55,7 @@ const AppWithRouterAccess = () => {
         <Switch>
           <Route path='/' exact={true} component={Home} />
           <SecureRoute path='/protected' component={Protected} />
-          <Route path='/login' render={() => <Login customer={customer}/>} />
+          <Route path='/login' render={() => <Login customer={customer} stateToken={stateToken} fromURI={fromURI}/>} />
           <Route path='/login/callback' component={LoginCallback} />
         </Switch>
         <footer>
