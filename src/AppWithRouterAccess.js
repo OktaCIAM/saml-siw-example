@@ -22,24 +22,24 @@ const AppWithRouterAccess = () => {
     history.replace(toRelativeUrl(originalUri, window.location.origin));
   };
 
-  let customer = null;
+  let client = null;
   let stateToken = null;
   let fromURI = null;
 
   if (window.location.search) {
     const urlParams = new URLSearchParams(window.location.search);
-    customer = urlParams.get('client');
+    client = urlParams.get('client');
     stateToken = urlParams.get('stateToken');
     fromURI = urlParams.get('fromURI');
   }
   
   const currentUrl = new URL(window.location.href);
   if (currentUrl.host.indexOf('.') !== -1) {
-    customer = currentUrl.host.split('.')[0];
+    client = currentUrl.host.split('.')[0];
   }
 
   return (
-    <div className={`${customer ? customer : null} background`}>
+    <div className={`${client ? client : null} background`}>
       <Security
         oktaAuth={oktaAuth}
         onAuthRequired={customAuthHandler}
@@ -55,7 +55,7 @@ const AppWithRouterAccess = () => {
         <Switch>
           <Route path='/' exact={true} component={Home} />
           <SecureRoute path='/protected' component={Protected} />
-          <Route path='/login' render={() => <Login customer={customer} stateToken={stateToken} fromURI={fromURI}/>} />
+          <Route path='/login' render={() => <Login client={client} stateToken={stateToken} fromURI={fromURI}/>} />
           <Route path='/login/callback' component={LoginCallback} />
         </Switch>
         <footer>
