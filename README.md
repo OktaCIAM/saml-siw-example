@@ -1,6 +1,8 @@
 # Example Sign In Widget
 This demonstrates how to create configurations of the SIW upon parameters being passed along through redirect URIs configured within Okta.
 
+This is based off the official React Sign In Widget tutorial: https://developer.okta.com/code/react/okta_react_sign-in_widget/
+
 ## Scripts
 
 In the project directory, you can run:
