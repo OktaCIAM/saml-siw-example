@@ -13,6 +13,11 @@ This is based off the official React Sign In Widget tutorial: https://developer.
 3. `npm install`
 4. `npm run start-dev`
 
+#### Okta Tenant Configuration
+Ensure that the `localhost:3000` (or the host url) has been added as a Trusted Origin within the tenant
+![image](https://user-images.githubusercontent.com/6020066/150208580-ae865249-4d94-481c-b1d4-ba8da6ed8a88.png)
+
+
 ### Editing Configurations
 Add configurations for your Sign In Widget within the `src/config.js` file. In addition, you can adjust parameters passed
 
