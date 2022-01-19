@@ -3,6 +3,16 @@ This demonstrates how to create configurations of the SIW upon parameters being 
 
 This is based off the official React Sign In Widget tutorial: https://developer.okta.com/code/react/okta_react_sign-in_widget/
 
+## Requirements
+- Okta Tenant
+- Node.JS
+
+## Getting Started
+1. Download the repository through `git` or through the ZIP download
+2. `cd saml-siw-example`
+3. `npm install`
+4. `npm run start-dev`
+
 ## Scripts
 
 In the project directory, you can run:
