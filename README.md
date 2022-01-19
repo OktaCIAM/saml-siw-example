@@ -1,5 +1,5 @@
-# Example Sign In Widget
-This demonstrates how to create configurations of the SIW upon parameters being passed along through redirect URIs configured within Okta.
+# Example Sign In Widget with SAML and URL Parameters
+This demonstrates how to create configurations of the SIW upon parameters being passed along through redirect URIs configured within Okta and how to utilize the widget to perform a SAML based authentication.
 
 This is based off the official React Sign In Widget tutorial: https://developer.okta.com/code/react/okta_react_sign-in_widget/
 
@@ -12,6 +12,9 @@ This is based off the official React Sign In Widget tutorial: https://developer.
 2. `cd saml-siw-example`
 3. `npm install`
 4. `npm run start-dev`
+
+### Editing Configurations
+Add configurations for your Sign In Widget within the `src/config.js` file. In addition, you can adjust parameters passed
 
 ## Scripts
 
